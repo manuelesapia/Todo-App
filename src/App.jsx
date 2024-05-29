@@ -59,31 +59,33 @@ function App() {
   const [filter, setFilter] = useState("All");
 
   return (
-    <div className="todoapp stack-large">
-      <Banner />
-      <Form
-        addTask={function (label) {
-          addTask(tasks, setTasks, label);
-        }}
-      />
-      <Filters
-        changeFilter={function (filter) {
-          changeFilter(setFilter, filter);
-        }}
-      />
-      <Tasks
-        tasks={getFilteredTasks(tasks, filter)}
-        toggleTaskCompleted={function (id) {
-          toggleTaskCompleted(tasks, setTasks, id);
-        }}
-        deleteTask={function (id) {
-          deleteTask(tasks, setTasks, id);
-        }}
-        editTask={function (id, newLabel) {
-          editTask(tasks, setTasks, id, newLabel);
-        }}
-      />
-    </div>
+    <main>
+      <section className="todoapp stack-large">
+        <Banner />
+        <Form
+          addTask={function (label) {
+            addTask(tasks, setTasks, label);
+          }}
+        />
+        <Filters
+          changeFilter={function (filter) {
+            changeFilter(setFilter, filter);
+          }}
+        />
+        <Tasks
+          tasks={getFilteredTasks(tasks, filter)}
+          toggleTaskCompleted={function (id) {
+            toggleTaskCompleted(tasks, setTasks, id);
+          }}
+          deleteTask={function (id) {
+            deleteTask(tasks, setTasks, id);
+          }}
+          editTask={function (id, newLabel) {
+            editTask(tasks, setTasks, id, newLabel);
+          }}
+        />
+      </section>
+    </main>
   );
 }
 
